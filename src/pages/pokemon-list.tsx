@@ -25,7 +25,7 @@ const PokemonList: FunctionComponent = () => {
         </div>
         <Link className="btn-floating btn-large waves-effect waves-light red z-depth-3"
           style={{ position: 'fixed', bottom: '25px', right: '25px' }}
-          to="/pokemon/add">
+          to="/pokemons/add">
           <i className="material-icons">add</i>
         </Link>
       </div>

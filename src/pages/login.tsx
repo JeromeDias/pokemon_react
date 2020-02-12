@@ -22,7 +22,7 @@ const Login: FunctionComponent = () => {
     password: { value: '' },
   });
 
-  const [message, setMessage] = useState<string>('Vous êtes déconnecté. (pikachu / pikachu)');
+  const [message, setMessage] = useState<string>('Vous êtes déconnecté.');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const fieldName: string = e.target.name;
@@ -122,3 +122,5 @@ const Login: FunctionComponent = () => {
     </form>
   );
 };
+
+export default Login;
