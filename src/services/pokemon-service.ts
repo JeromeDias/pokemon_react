@@ -37,7 +37,7 @@ static deletePokemon(pokemon: Pokemon): Promise<{}>{
 static addPokemon(pokemon: Pokemon): Promise<Pokemon> {
   delete pokemon.created;
 
-  return fetch(`http://localhost:3001/pokemons/` ,{
+  return fetch(`http://localhost:3001/pokemons`, {
     method: 'POST',
     body: JSON.stringify(pokemon),
     headers: { 'Content-Type': 'application/json'}
@@ -46,6 +46,11 @@ static addPokemon(pokemon: Pokemon): Promise<Pokemon> {
   .catch(error => this.handleError(error));
 }
 
+static searchPokemon(term: string): Promise<Pokemon[]> {
+  return fetch(`http://localhost:3001/pokemons?q=${term}`)
+  .then(response => response.json())
+  .catch(error => this.handleError(error));
+}
   static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;
   }
